@@ -1,25 +1,69 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/Andrey-Chernov/environment-p5q-dev
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
-  provider: gke
-  zone: ""
-gitops: true
+  clusterName: p5q
+  devEnvApprovers:
+  - Andrey-Chernov
+  environmentGitOwner: Andrey-Chernov
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  provider: kubernetes
+  registry: docker.io
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: p5q.ach.cloudns.cl
+    externalDNS: false
+    ignoreLoadBalancer: true
+    namespaceSubDomain: -jx.
+    tls:
+      email: Andrey.Chernov@list.ru
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-p5q-dev
+- ingress:
+    domain: p5q.ach.cloudns.cl
+    externalDNS: false
+    ignoreLoadBalancer: true
+    namespaceSubDomain: ""
+    tls:
+      email: Andrey.Chernov@list.ru
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-p5q-staging
+- ingress:
+    domain: p5q.ach.cloudns.cl
+    externalDNS: false
+    ignoreLoadBalancer: true
+    namespaceSubDomain: ""
+    tls:
+      email: Andrey.Chernov@list.ru
+      enabled: false
+      production: false
+  key: production
+  repository: environment-p5q-production
+gitops: true
 ingress:
-  domain: ""
+  domain: p5q.ach.cloudns.cl
   externalDNS: false
+  ignoreLoadBalancer: true
+  namespaceSubDomain: -jx.
   tls:
-    email: ""
+    email: Andrey.Chernov@list.ru
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: false
     url: ""
@@ -29,7 +73,11 @@ storage:
   repository:
     enabled: false
     url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.610
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse

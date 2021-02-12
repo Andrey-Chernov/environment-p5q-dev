@@ -1,0 +1,15 @@
+adminUser:
+  password: local:p5q/adminUser:password
+  username: admin
+docker:
+  email: Andrey.Chernov@list.ru
+  password: local:p5q/docker:password
+  url: https://index.docker.io/v1/
+  username: andrusee
+enableDocker: true
+pipelineUser:
+  email: Andrey.Chernov@list.ru
+  token: local:p5q/pipelineUser:token
+  username: Andrey-Chernov
+prow:
+  hmacToken: local:p5q/prow:hmacToken
