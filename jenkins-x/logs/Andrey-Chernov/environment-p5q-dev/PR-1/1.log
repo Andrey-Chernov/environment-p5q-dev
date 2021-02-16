@@ -1,0 +1,50 @@
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1613482277.4388063,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-andrey-chernov-environment-p5q-rvbdh-zzgx4[0m
+{"level":"info","ts":1613482417.1868665,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/**************/environment-p5q-dev.git @ master in path /workspace/source"}
+{"level":"warn","ts":1613482417.24515,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1613482417.8430612,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f085c6ba65ab5f59cbf2eca79db7873a4eebb860,1:bd8623bfed801b9ebb3f684670accfa1983ec1df
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow bd8623bfed801b9ebb3f684670accfa1983ec1df: f085c6ba65ab5f59cbf2eca79db7873a4eebb860:
+DEBUG: ran git fetch --unshallow origin bd8623bfed801b9ebb3f684670accfa1983ec1df: f085c6ba65ab5f59cbf2eca79db7873a4eebb860: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard f085c6ba65ab5f59cbf2eca79db7873a4eebb860
+DEBUG: ran git reset --hard f085c6ba65ab5f59cbf2eca79db7873a4eebb860 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge bd8623bfed801b9ebb3f684670accfa1983ec1df
+DEBUG: ran git merge bd8623bfed801b9ebb3f684670accfa1983ec1df in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e f085c6ba65ab5f59cbf2eca79db7873a4eebb860..HEAD
+Merged SHA bd8623bfed801b9ebb3f684670accfa1983ec1df with commit message 'chore(deps): bump https://github.com/**************/quickSpringBoot.git' into base branch master
+
+Showing logs for build [32mandrey-chernov-environment-p5q-rvbdh-1[0m stage [32mpr-checks[0m and container [32mstep-verify-parameters[0m
+error: resolve the secrets URIs: replacing secrets URIs: replacing vault paths in *****User:
+  password: local:p5q/*****User:password
+  username: *****
+docker:
+  email: Andrey.Chernov@list.ru
+  password: local:p5q/docker:password
+  url: https://index.*********/v1/
+  username: ********
+enableDocker: true
+pipelineUser:
+  email: Andrey.Chernov@list.ru
+  token: local:p5q/pipelineUser:token
+  username: **************
+prow:
+  hmacToken: local:p5q/prow:hmacToken
+: unable to find "password" in secret at "p5q/*****User"
+[31m
+Pipeline failed on stage 'pr-checks' : container 'step-verify-parameters'. The execution of the pipeline has stopped.[0m
