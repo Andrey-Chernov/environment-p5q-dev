@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: Andrey-Chernov
+  repo: quickSpringBoot
+  url: https://github.com/Andrey-Chernov/quickSpringBoot.git
+  version: ""
+  versionURL: ""

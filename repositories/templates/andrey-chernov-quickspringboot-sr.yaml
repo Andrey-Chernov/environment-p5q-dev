@@ -1,0 +1,48 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: Andrey-Chernov
+    provider: github
+    repository: quickSpringBoot
+  managedFields:
+  - apiVersion: jenkins.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:owner: {}
+          f:provider: {}
+          f:repository: {}
+      f:spec:
+        .: {}
+        f:description: {}
+        f:httpCloneURL: {}
+        f:org: {}
+        f:provider: {}
+        f:providerKind: {}
+        f:providerName: {}
+        f:repo: {}
+        f:scheduler:
+          .: {}
+          f:kind: {}
+          f:name: {}
+        f:url: {}
+    manager: jx
+    operation: Update
+    time: "2021-02-16T13:18:43Z"
+  name: andrey-chernov-quickspringboot
+spec:
+  description: Imported application for Andrey-Chernov/quickSpringBoot
+  httpCloneURL: https://github.com/Andrey-Chernov/quickSpringBoot.git
+  org: Andrey-Chernov
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: quickSpringBoot
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/Andrey-Chernov/quickSpringBoot.git
